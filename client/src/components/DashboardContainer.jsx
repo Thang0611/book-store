@@ -13,19 +13,19 @@ const DashboardContainer = () => {
   const { data, isLoading, isError } = useGetBooks()
 
   const [columnDefs, setColumnDefs] = useState([
-    { field: 'Tiêu đề', minWidth: 300 },
-    { field: 'Tác giả' },
+    { field: 'title', minWidth: 300 },
+    { field: 'author' },
     {
-      field: 'Thể loại',
+      field: 'category',
     },
     {
-      field: 'Nhà xuất bản',
+      field: 'publisher',
     },
     {
-      field: 'Số trang',
+      field: 'numOfPage',
     },
-    { field: 'Giá bán', minWidth: 150 },
-    { field: 'Số lượng' },
+    { field: 'price', minWidth: 100 },
+    { field: 'quantity' },
     { field: 'action', minWidth: 160, cellRenderer: ActionsRender },
   ])
 
@@ -40,6 +40,7 @@ const DashboardContainer = () => {
       flex: 1,
       minWidth: 100,
       resizable: true,
+
     }
   }, [])
   if (isLoading || isError) {
